@@ -1,15 +1,12 @@
-<!--
-Mobile web development
-Template for General purpose html5 page with JQuery Mobile
-Created by: Sabbir Ahmed
-email:      sahmed@conestogac.on.ca
--->
+<!--Source: https://forum.supercell.com/showthread.php/1217796-Clash-of-Clans-API-a-tutorial?p=7998267&viewfull=1#post7998267-->
+<!--209YC9GY-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>COC Build Time</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--jQuery-->
     <script src="js/lib/jquery-2.1.4.js"></script>
     <!--jQuery mobile-->
@@ -43,7 +40,7 @@ email:      sahmed@conestogac.on.ca
             <label for="txtGamerTag">GAMER TAG # <a data-icon=""></a></label>
             <input type="text" id="txtGamerTag" name="txtGamerTag" data-inline="true" value=""
                    data-clear-btn="true">
-            <p id="txtError"></p>
+            <p style="color:red;" id="txtError"></p>
             <br>
             <button type="button" data-role="button" id="btnCalculate" name="btnCalculate"
                     data-theme="b">Calculate
@@ -53,26 +50,42 @@ email:      sahmed@conestogac.on.ca
         <!--Results-->
         <br>
         <br>
+
+        <input type="text" id="playerName" name="playerName" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" readonly>
+
         <!--Town Hall Level-->
         <label for="txtTownHallLevel">Town Hall Level: <a data-icon=""></a></label>
         <input type="text" id="txtTownHallLevel" name="txtTownHallLevel" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" disabled>
+               data-clear-btn="true" placeholder="N/A" readonly>
         <br>
+
+        <h2>Heroes' Levels</h2>
+
+        <!--King Level-->
+        <label for="txtKingLevel">King's Level: <a data-icon=""></a></label>
+        <input type="text" id="txtKingLevel" name="txtKingLevel" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" readonly>
+
+        <!--Queen Level-->
+        <label for="txtQueenLevel">Queen's Level: <a data-icon=""></a></label>
+        <input type="text" id="txtQueenLevel" name="txtQueenLevel" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" readonly>
 
         <h2>Time To Max</h2>
 
         <!--Max King Time-->
         <label for="txtKingTime">King: <a data-icon=""></a></label>
         <input type="text" id="txtKingTime" name="txtKingTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" disabled>
+               data-clear-btn="true" placeholder="N/A" readonly>
         <!--Max Queen Time-->
         <label for="txtQueenTime">Queen: <a data-icon=""></a></label>
         <input type="text" id="txtQueenTime" name="txtQueenTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" disabled>
+               data-clear-btn="true" placeholder="N/A" readonly>
         <!--Max Spell Time-->
         <label for="txtSpellTime">Spells: <a data-icon=""></a></label>
         <input type="text" id="txtSpellTime" name="txtSpellTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" disabled>
+               data-clear-btn="true" placeholder="N/A" readonly>
     </section>
 </div>
 
