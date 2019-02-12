@@ -1,0 +1,9 @@
+label.error{
+    color: red;
+    font-weight: bold;
+}
+
+*{
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 2px;
+}

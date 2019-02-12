@@ -1,0 +1,51 @@
+<!--
+Mobile web development
+Template for General purpose html5 page with JQuery Mobile
+Created by: Sabbir Ahmed
+email:      sahmed@conestogac.on.ca
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>COC Build Time</title>
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery mobile-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--jQuery validation-->
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--jQuery mobile css-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--Alfa Slab One Font-->
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+    <!--our scripts-->
+    <script src="js/database.js"></script>
+    <script src="js/DAL.js"></script>
+    <script src="js/facade.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/global.js"></script>
+
+    <!--our stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+<!--home page-->
+<div id="pageHome" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="b">
+        <h1>COC Build Time</h1>
+    </header>
+    <section data-role="content">
+        <form id="#frmBuildTime" name="frmBuildTime">
+            <label for="txtGamerTag">GAMER TAG # <a data-icon=""></a></label>
+            <input type="text" id="txtGamerTag" name="txtGamerTag" data-inline="true" value=""
+                   data-clear-btn="true">
+        </form>
+    </section>
+</div>
+
+</body>
+</html>
