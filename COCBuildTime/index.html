@@ -27,7 +27,7 @@ email:      sahmed@conestogac.on.ca
     <script src="js/facade.js"></script>
     <script src="js/util.js"></script>
     <script src="js/global.js"></script>
-
+    s
     <!--our stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -39,11 +39,40 @@ email:      sahmed@conestogac.on.ca
         <h1>COC Build Time</h1>
     </header>
     <section data-role="content">
-        <form id="#frmBuildTime" name="frmBuildTime">
+        <form id="frmBuildTime" name="frmBuildTime">
             <label for="txtGamerTag">GAMER TAG # <a data-icon=""></a></label>
             <input type="text" id="txtGamerTag" name="txtGamerTag" data-inline="true" value=""
                    data-clear-btn="true">
+            <p id="txtError"></p>
+            <br>
+            <button type="button" data-role="button" id="btnCalculate" name="btnCalculate"
+                    data-theme="b">Calculate
+            </button>
         </form>
+
+        <!--Results-->
+        <br>
+        <br>
+        <!--Town Hall Level-->
+        <label for="txtTownHallLevel">Town Hall Level: <a data-icon=""></a></label>
+        <input type="text" id="txtTownHallLevel" name="txtTownHallLevel" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" disabled>
+        <br>
+
+        <h2>Time To Max</h2>
+
+        <!--Max King Time-->
+        <label for="txtKingTime">King: <a data-icon=""></a></label>
+        <input type="text" id="txtKingTime" name="txtKingTime" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" disabled>
+        <!--Max Queen Time-->
+        <label for="txtQueenTime">Queen: <a data-icon=""></a></label>
+        <input type="text" id="txtQueenTime" name="txtQueenTime" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" disabled>
+        <!--Max Spell Time-->
+        <label for="txtSpellTime">Spells: <a data-icon=""></a></label>
+        <input type="text" id="txtSpellTime" name="txtSpellTime" data-inline="true" value=""
+               data-clear-btn="true" placeholder="N/A" disabled>
     </section>
 </div>
 
