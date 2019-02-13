@@ -20,12 +20,9 @@ function EvaluateResult(data) {
     }
     else
     {
-        $("#playerName").val(info.name);
-        $("#txtTownHallLevel").val(info.townHallLevel);
-        $("#txtKingLevel").val(getKingLevel(info));
-        $("#txtQueenLevel").val(getQueenLevel(info));
+        $("#txtPlayerName").html("Hi, Chief " +info.name+"!");
         $("#txtKingTime").val(calculateKingTime(info));
-        // $("#txtQueenTime").val(calculateQueenTime(info));
+        $("#txtQueenTime").val(calculateQueenTime(info));
         // $("#txtSpellTime").val(calculateSpellTime(info));
     }
 }
