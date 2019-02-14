@@ -16,7 +16,7 @@ function EvaluateResult(data) {
 
     if(info.name == null)
     {
-        $("#txtError").html("Not a valid info tag.");
+        $("#txtError").html("Please enter a valid tag #");
     }
     else
     {
@@ -26,6 +26,8 @@ function EvaluateResult(data) {
         // $("#txtSpellTime").val(calculateSpellTime(info));
     }
 }
+
+
 
 function OnServerFail(){
     $("#txtError").html("Something went wrong. Try again later.");

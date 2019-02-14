@@ -1,3 +1,4 @@
+<!--209YC9GY-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +22,6 @@
     <script src="js/facade.js"></script>
     <script src="js/util.js"></script>
     <script src="js/global.js"></script>
-    s
-    <!--our stylesheet-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
@@ -39,7 +38,7 @@
                    data-clear-btn="true">
             <p style="color:red;" id="txtError"></p>
             <br>
-            <button type="button" data-role="button" id="btnCalculate" name="btnCalculate"
+            <button type="button" data-role="button" id="btnCalculateHeroesAndSpells" name="btnCalculateHeroesAndSpells"
                     data-theme="b">Calculate
             </button>
         </form>
@@ -61,8 +60,37 @@
                data-clear-btn="true" placeholder="N/A" readonly>
         <!--Max Spell Time-->
         <label for="txtSpellTime">Spells: <a data-icon=""></a></label>
-        <input type="text" id="txtSpellTime" name="txtSpellTime" data-inline="true" value="Coming Soon"
-               data-clear-btn="true" placeholder="" readonly>
+        <input type="text" id="txtSpellTime" name="txtSpellTime" data-inline="true" value=""
+               data-clear-btn="true" placeholder="Coming Soon" readonly>
+        <!--Max Dark Spell Time-->
+        <label for="txtDarkSpellTime">Dark Spells: <a data-icon=""></a></label>
+        <input type="text" id="txtDarkSpellTime" name="txtSpellTime" data-inline="true" value=""
+               data-clear-btn="true" placeholder="Coming Soon" readonly>
+        <br>
+        <br>
+
+        <!--Time To Max Buildings-->
+        <h2>Buildings To Max</h2>
+        <sub>Hint: Don't add buildings that already reached the max for your TH level.</sub>
+        <br>
+
+
+        <select id="cmbDBuildings" data-native-menu="false">
+            <option value="AD">Air Defence</option>
+            <option value="AS">Air Sweeper</option>
+            <option value="AT">Archer Tower</option>
+            <option value="BT">Bomb Tower</option>
+            <option value="CA">Canon</option>
+            <option value="EA">Eagle Artillery</option>
+            <option value="GT">Giga Tesla</option>
+            <option value="HT">Hidden Tesla</option>
+            <option value="IT">Inferno Tower</option>
+            <option value="MO">Mortar</option>
+            <option value="WT">Wizard Tower</option>
+            <option value="XB">X-Bow</option>
+        </select>
+        <button type="button" data-role="button" id="addDBuilding" name="addDBuilding" data-icon="plus"> Add
+        </button>
     </section>
 </div>
 

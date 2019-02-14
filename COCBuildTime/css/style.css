@@ -6,3 +6,7 @@ label.error{
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+h2{
+   margin-bottom: 2px;
+}
