@@ -11,13 +11,24 @@ var king = {
     },
     getTimeLeft: function (options) {
         function txFunction(tx) {
-            tx.executeSql("SELECT timeRequired FROM king WHERE id > ? AND townHallLevel <= ?;", options, successTransaction, errorHandler);
+            tx.executeSql("SELECT timeRequired FROM king WHERE id > ? AND townHallLevel <= ?;",
+                options, successExecution, errorHandler);
         }
-        function successTransaction(tx, rs) {
-            $("#txtKingTime").val(getHeroTimeRemaining(rs));
+        function successExecution(tx, rs) {
+            if(rs.rows.length > 0)
+            {
+                $("#txtKingTime").val(getHeroTimeRemaining(rs));
+            }
+            else
+            {
+                $("#txtKingTime").val("Zero Days");
+            }
+        }
+        function successTransaction(tx, rs){
+            console.info("King transaction successful");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
-    },
+    }
 };
 
 var queen = {
@@ -33,13 +44,24 @@ var queen = {
     },
     getTimeLeft: function (options) {
         function txFunction(tx) {
-            tx.executeSql("SELECT timeRequired FROM queen WHERE id > ? AND townHallLevel <= ?;", options, successTransaction, errorHandler);
+            tx.executeSql("SELECT timeRequired FROM queen WHERE id > ? AND townHallLevel <= ?;",
+                options, successExecution, errorHandler);
         }
-        function successTransaction(tx, rs) {
-            $("#txtQueenTime").val(getHeroTimeRemaining(rs));
+        function successExecution(tx, rs) {
+            if(rs.rows.length > 0)
+            {
+                $("#txtQueenTime").val(getHeroTimeRemaining(rs));
+            }
+            else
+            {
+                $("#txtQueenTime").val("Zero Days");
+            }
+        }
+        function successTransaction(tx, rs){
+            console.info("Queen transaction successful");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
-    },
+    }
 };
 
 var spell = {
@@ -55,6 +77,6 @@ var spell = {
     },
     getSpellTime: function (options, callback) {
         var sql = "SELECT timeRequired FROM spell " +
-        "WHERE spellName"
+        "WHERE "
     }
 };
