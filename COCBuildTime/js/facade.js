@@ -27,8 +27,6 @@ function EvaluateResult(data) {
     }
 }
 
-
-
 function OnServerFail(){
     $("#txtError").html("Something went wrong. Try again later.");
 }

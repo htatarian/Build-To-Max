@@ -21,6 +21,10 @@ function initDB(){
         {
             populateQueen();
         }
+        if(spell)
+        {
+            populateSpell();
+        }
     }
 }
 

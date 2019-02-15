@@ -67,7 +67,7 @@ var queen = {
 var spell = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            var sql = "INSERT INTO spell(spellName, townHallLevel, timeRequired) VALUES(?,?);";
+            var sql = "INSERT INTO spell(name, timeRequired, spellFactoryLevel) VALUES(?,?,?);";
             tx.executeSql(sql, options, callback, errorHandler);
         }
         function successTransaction() {
