@@ -11,19 +11,17 @@ function showResults() {
 }
 
 function EvaluateResult(data) {
-    $("#txtError").html("")
-    var info = JSON.parse(data);
+    $("#txtError").html("");
 
-    if(info.name == null)
-    {
+    var info = JSON.parse(data);
+    if(info.name == null) {
         $("#txtError").html("Please enter a valid tag #");
     }
-    else
-    {
+    else {
         $("#txtPlayerName").html("Hi, Chief " +info.name+"!");
-        $("#txtKingTime").val(calculateKingTime(info));
-        $("#txtQueenTime").val(calculateQueenTime(info));
-        // $("#txtSpellTime").val(calculateSpellTime(info));
+        calculateKingTime(info);
+        calculateQueenTime(info);
+        $("#txtSpellTime").val(calculateSpellTime(info, hoursToDaysHours));
     }
 }
 

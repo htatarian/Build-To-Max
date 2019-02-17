@@ -67,7 +67,7 @@ var queen = {
 var spell = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            var sql = "INSERT INTO spell(name, timeRequired, spellFactoryLevel) VALUES(?,?,?);";
+            var sql = "INSERT INTO spell(name, spellLevel, timeRequired, spellFactoryLevel) VALUES(?,?,?,?);";
             tx.executeSql(sql, options, callback, errorHandler);
         }
         function successTransaction() {
@@ -75,8 +75,18 @@ var spell = {
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
-    getSpellTime: function (options, callback) {
-        var sql = "SELECT timeRequired FROM spell " +
-        "WHERE "
+    getSpecifiedSpellTime: function (options) {
+
+        function txFunction(tx) {
+
+            let sql = "SELECT * FROM spell " +
+                "WHERE name = ? AND spellFactoryLevel <= ? AND spellLevel > ?;";
+
+            tx.executeSql(sql, options, getSpecifiedSpellTimeCallback, errorHandler);
+        }
+
+        db.transaction(txFunction, errorHandler, function () {
+            console.info("Success: spell transaction successful");
+        });
     }
 };

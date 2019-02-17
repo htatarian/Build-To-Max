@@ -1,4 +1,3 @@
-<!--209YC9GY-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
 
     <!--our scripts-->
     <script src="js/database.js"></script>
@@ -29,18 +29,18 @@
 <!--home page-->
 <div id="pageHome" data-role="page">
     <header data-role="header" data-position="fixed" data-theme="b">
-        <h1>COC Build Time</h1>
+        <h6>Clash To Max</h6>
     </header>
     <section data-role="content">
         <img style="display: block; margin: auto;" src="img/Archer_Queen.png" alt="Archer Queen Image">
         <form id="frmBuildTime" name="frmBuildTime">
-            <label for="txtGamerTag">GAMER TAG # <a data-icon=""></a></label>
+            <label for="txtGamerTag"><h3>GAMER TAG #</h3><a data-icon=""></a></label>
             <input type="text" id="txtGamerTag" name="txtGamerTag" data-inline="true" value=""
                    data-clear-btn="true">
             <p style="color:red;" id="txtError"></p>
             <br>
             <button type="button" data-role="button" id="btnCalculateHeroesAndSpells" name="btnCalculateHeroesAndSpells"
-                    data-theme="b">Calculate
+                    data-theme="b"><p>Calculate</p>
             </button>
         </form>
 
@@ -48,25 +48,21 @@
         <br>
         <br>
 
-        <h3 id="txtPlayerName"></h3>
+        <h1 id="txtPlayerName"></h1>
         <h2>Time To Max</h2>
 
         <!--Max King Time-->
-        <label for="txtKingTime">King: <a data-icon=""></a></label>
+        <label for="txtKingTime"><h3>King:</h3><a data-icon=""></a></label>
         <input type="text" id="txtKingTime" name="txtKingTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" readonly>
+               data-clear-btn="true" placeholder="" readonly>
         <!--Max Queen Time-->
-        <label for="txtQueenTime">Queen: <a data-icon=""></a></label>
+        <label for="txtQueenTime"><h3>Queen:</h3><a data-icon=""></a></label>
         <input type="text" id="txtQueenTime" name="txtQueenTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="N/A" readonly>
+               data-clear-btn="true" placeholder="" readonly>
         <!--Max Spell Time-->
-        <label for="txtSpellTime">Spells: <a data-icon=""></a></label>
+        <label for="txtSpellTime"><h3>Spells: (Unlocked Only)</h3> <a data-icon=""></a></label>
         <input type="text" id="txtSpellTime" name="txtSpellTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="Coming Soon" readonly>
-        <!--Max Dark Spell Time-->
-        <label for="txtDarkSpellTime">Dark Spells: <a data-icon=""></a></label>
-        <input type="text" id="txtDarkSpellTime" name="txtSpellTime" data-inline="true" value=""
-               data-clear-btn="true" placeholder="Coming Soon" readonly>
+               data-clear-btn="true" placeholder="" readonly>
         <br>
         <br>
 
@@ -75,8 +71,8 @@
         <sub>Hint: Don't add buildings that already reached the max for your TH level.</sub>
         <br>
 
-
         <select id="cmbDBuildings" data-native-menu="false">
+            <option value="NN">None</option>
             <option value="AD">Air Defence</option>
             <option value="AS">Air Sweeper</option>
             <option value="AT">Archer Tower</option>
@@ -90,7 +86,8 @@
             <option value="WT">Wizard Tower</option>
             <option value="XB">X-Bow</option>
         </select>
-        <button type="button" data-role="button" id="addDBuilding" name="addDBuilding" data-icon="plus"> Add
+        <button type="button" data-role="button" id="addDBuilding" name="addDBuilding">
+            <p>Add</p>
         </button>
     </section>
 </div>
