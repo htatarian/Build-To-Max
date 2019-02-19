@@ -9,21 +9,21 @@ function init() {
 
 function initDB(){
     DB.createDatabase();
-    if(DB)
+    if(db)
     {
         DB.dropTables();
         DB.createTables();
-        if(king)
-        {
+        if(king) {
             populateKing();
         }
-        if(queen)
-        {
+        if(queen) {
             populateQueen();
         }
-        if(spell)
-        {
+        if(spell) {
             populateSpell();
+        }
+        if(troop){
+            populateTroop();
         }
     }
 }

@@ -6,10 +6,10 @@ function errorHandler(tx, error){
 
 var DB  = {
     createDatabase: function(){
-        var shortName = "BuildTimeDB";
-        var version = "1.0";
-        var displayName = "COC Build Time Database";
-        var dbSize = 2 * 1024 * 1024;
+        let shortName = "BuildTimeDB";
+        let version = "1.0";
+        let displayName = "COC Build Time Database";
+        let dbSize = 2 * 1024 * 1024;
 
         function dbCreateSuccess() {
             console.info("Success: Database created successfully.");
@@ -19,7 +19,7 @@ var DB  = {
     createTables: function (){
         function txFunction(tx) {
 
-            var sql = [
+            let sql = [
                 // CREATE KING TABLE
                 "CREATE TABLE IF NOT EXISTS king(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
@@ -36,36 +36,44 @@ var DB  = {
                 "name VARCHAR(30) NOT NULL," +
                 "spellLevel INTEGER NOT NULL," +
                 "spellFactoryLevel INTEGER NOT NULL," +
+                "timeRequired INTEGER NOT NULL);",
+                // CREATE SPELL TABLE
+                "CREATE TABLE IF NOT EXISTS troop(" +
+                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "name VARCHAR(30) NOT NULL," +
+                "troopLevel INTEGER NOT NULL," +
+                "barracksLevel INTEGER NOT NULL," +
                 "timeRequired INTEGER NOT NULL);"
             ];
 
             function successCreate() {
-                console.info("Success: Table king created successfully ");
+                console.info("Success: Table created successfully ");
             }
 
-            for(var i = 0; i < sql.length; i++){
+            for(let i = 0; i < sql.length; i++){
                 tx.executeSql(sql[i], [], successCreate, errorHandler);
             }
         }
 
         function successTransaction() {
-            console.info("Create table transaction successful");
+            console.info("Create tables transaction successful");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
     dropTables: function(){
         function txFunction(tx) {
-            var sql = [
+            let sql = [
                 "DROP TABLE IF EXISTS king;",
                 "DROP TABLE IF EXISTS queen;",
-                "DROP TABLE IF EXISTS spell;"
+                "DROP TABLE IF EXISTS spell;",
+                "DROP TABLE IF EXISTS troop;"
                 ];
 
             function successDrop() {
                 console.info("Success: Table dropped successfully");
             }
 
-            for(var i = 0; i < sql.length; i++)
+            for(let i = 0; i < sql.length; i++)
             {
                 tx.executeSql(sql[i], [], successDrop, errorHandler);
             }

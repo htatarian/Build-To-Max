@@ -1,11 +1,11 @@
-var king = {
+let king = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            var sql = "INSERT INTO king(townHallLevel, timeRequired) VALUES(?,?);";
+            let sql = "INSERT INTO king(townHallLevel, timeRequired) VALUES(?,?);";
             tx.executeSql(sql, options, callback, errorHandler);
         }
         function successTransaction() {
-            console.info("Success: insert transaction successful");
+            console.info("Success: King Level Inserted");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
@@ -21,24 +21,24 @@ var king = {
             }
             else
             {
-                $("#txtKingTime").val("Zero Days");
+                $("#txtKingTime").val("0 Days");
             }
         }
-        function successTransaction(tx, rs){
-            console.info("King transaction successful");
+        function successTransaction(){
+            console.info("Success: King Max Time Fetched");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     }
 };
 
-var queen = {
+let queen = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            var sql = "INSERT INTO queen(townHallLevel, timeRequired) VALUES(?,?);";
+            let sql = "INSERT INTO queen(townHallLevel, timeRequired) VALUES(?,?);";
             tx.executeSql(sql, options, callback, errorHandler);
         }
         function successTransaction() {
-            console.info("Success: insert transaction successful");
+            console.info("Success: Queen Level Inserted");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
@@ -54,24 +54,24 @@ var queen = {
             }
             else
             {
-                $("#txtQueenTime").val("Zero Days");
+                $("#txtQueenTime").val("0 Days");
             }
         }
-        function successTransaction(tx, rs){
-            console.info("Queen transaction successful");
+        function successTransaction(){
+            console.info("Success: Queen Max Time Fetched");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     }
 };
 
-var spell = {
+let spell = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            var sql = "INSERT INTO spell(name, spellLevel, timeRequired, spellFactoryLevel) VALUES(?,?,?,?);";
+            let sql = "INSERT INTO spell(name, spellLevel, timeRequired, spellFactoryLevel) VALUES(?,?,?,?);";
             tx.executeSql(sql, options, callback, errorHandler);
         }
         function successTransaction() {
-            console.info("Success: insert transaction successful");
+            console.info("Success: Spell Level Inserted");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
@@ -86,7 +86,34 @@ var spell = {
         }
 
         db.transaction(txFunction, errorHandler, function () {
-            console.info("Success: spell transaction successful");
+            console.info("Success: Spell Max Time Fetched");
+        });
+    }
+};
+
+let troop = {
+    insert: function (options, callback) {
+        function txFunction(tx) {
+            let sql = "INSERT INTO troop(name, troopLevel, timeRequired, barracksLevel) VALUES(?,?,?,?);";
+            tx.executeSql(sql, options, callback, errorHandler);
+        }
+        function successTransaction() {
+            console.info("Success: Troop Level Inserted");
+        }
+        db.transaction(txFunction, errorHandler, successTransaction);
+    },
+    getSpecifiedTroopTime: function (options) {
+
+        function txFunction(tx) {
+
+            let sql = "SELECT * FROM troop " +
+                "WHERE name = ? AND barracksLevel <= ? AND troopLevel > ?;";
+
+            tx.executeSql(sql, options, getSpecifiedTroopTimeCallback, errorHandler);
+        }
+
+        db.transaction(txFunction, errorHandler, function () {
+            console.info("Success: Troop Max Time Fetched");
         });
     }
 };

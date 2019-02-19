@@ -3,7 +3,7 @@ function showResults() {
     const gamerTag = $("#txtGamerTag").val();
     //    1. Server validation
     $.ajax( {
-        url: "PHP/getPlayerInfo.php",
+        url: "php/getPlayerInfo.php",
         data: {gamerTag:gamerTag},
         success: EvaluateResult,
         error: OnServerFail
@@ -13,7 +13,7 @@ function showResults() {
 function EvaluateResult(data) {
     $("#txtError").html("");
 
-    var info = JSON.parse(data);
+    let info = JSON.parse(data);
     if(info.name == null) {
         $("#txtError").html("Please enter a valid tag #");
     }
@@ -21,14 +21,14 @@ function EvaluateResult(data) {
         $("#txtPlayerName").html("Hi, Chief " +info.name+"!");
         calculateKingTime(info);
         calculateQueenTime(info);
-        $("#txtSpellTime").val(calculateSpellTime(info, hoursToDaysHours));
+        calculateSpellTime(info);
+        calculateTroopsTime(info);
     }
 }
 
 function OnServerFail(){
     $("#txtError").html("Something went wrong. Try again later.");
 }
-
 
 
 
