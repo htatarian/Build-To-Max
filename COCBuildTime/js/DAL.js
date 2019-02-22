@@ -1,3 +1,5 @@
+//TODO: Add the third hero
+
 let king = {
     insert: function (options, callback) {
         function txFunction(tx) {
@@ -102,7 +104,6 @@ let troop = {
                 "WHERE name = ? AND barracksLevel <= ? AND troopLevel > ?;",
                 options, getSpecifiedTroopTimeCallback, errorHandler);
         }
-
         db.transaction(txFunction, errorHandler, function () {
             console.info("Success: Troop Max Time Fetched");
         });

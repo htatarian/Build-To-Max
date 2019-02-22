@@ -1,10 +1,10 @@
-var db;
+let db;
 
 function errorHandler(tx, error){
     console.error("SQL Error: " + tx + " ( " + error.code + " ) : " + error.message );
 }
 
-var DB  = {
+let DB  = {
     createDatabase: function(){
         let shortName = "BuildTimeDB";
         let version = "1.0";
