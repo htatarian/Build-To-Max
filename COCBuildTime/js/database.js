@@ -35,15 +35,15 @@ var DB  = {
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "name VARCHAR(30) NOT NULL," +
                 "spellLevel INTEGER NOT NULL," +
-                "spellFactoryLevel INTEGER NOT NULL," +
-                "timeRequired INTEGER NOT NULL);",
+                "timeRequired INTEGER NOT NULL," +
+                "spellFactoryLevel INTEGER NOT NULL);",
                 // CREATE SPELL TABLE
                 "CREATE TABLE IF NOT EXISTS troop(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "name VARCHAR(30) NOT NULL," +
                 "troopLevel INTEGER NOT NULL," +
-                "barracksLevel INTEGER NOT NULL," +
-                "timeRequired INTEGER NOT NULL);"
+                "timeRequired INTEGER NOT NULL," +
+                "barracksLevel INTEGER NOT NULL);"
             ];
 
             function successCreate() {

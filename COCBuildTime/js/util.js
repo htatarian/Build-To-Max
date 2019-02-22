@@ -9,12 +9,12 @@ function calculateQueenTime(info) {
 }
 
 function getHeroLevel(info,heroName) {
-    var heroes = info.heroes;
+    let heroes = info.heroes;
 
-    var heroLevel = 0;
+    let heroLevel = 0;
 
     if (heroes !== null) {
-        for (var i = 0; i < heroes.length; i++) {
+        for (let i = 0; i < heroes.length; i++) {
             if (heroes[i].name === heroName) {
                 heroLevel = heroes[i].level;
                 return heroLevel;
@@ -27,12 +27,11 @@ function getHeroLevel(info,heroName) {
 
 function calculateSpellTime(info) {
 
-    $("#txtSpellTime").val("0");
     function getSpellNames(info) {
-        var spells = info.spells;
-        var spellNames = [];
+        let spells = info.spells;
+        let spellNames = [];
 
-        for(var i = 0; i < spells.length; i++){
+        for(let i = 0; i < spells.length; i++){
             spellNames[i] = spells[i].name;
         }
 
@@ -40,10 +39,10 @@ function calculateSpellTime(info) {
     }
 
     function getSpellLevels(info) {
-        var spells = info.spells;
-        var spellLevels = [];
+        let spells = info.spells;
+        let spellLevels = [];
 
-        for(var i = 0; i < spells.length; i++){
+        for(let i = 0; i < spells.length; i++){
             spellLevels[i] = spells[i].level;
         }
 
@@ -54,10 +53,13 @@ function calculateSpellTime(info) {
     let spellLevels = getSpellLevels(info);
     let spellTimeTxt = $("#txtSpellTime");
 
+    spellTimeTxt.val("0");
+
+
     let spellTimePromise = new Promise((resolve) => {
 
         for(let i = 0; i < spellNames.length; i++) {
-            spell.getSpecifiedSpellTime([spellNames[i], info.townHallLevel + 2, spellLevels[i]]);
+            spell.getTime([spellNames[i], info.townHallLevel + 2, spellLevels[i]]);
         }
 
         setTimeout(function () {
@@ -73,7 +75,6 @@ function calculateSpellTime(info) {
 
 function calculateTroopsTime(info) {
 
-    $("#txtTroopTime").val("0");
     function getTroopNames(info) {
         let troops = info.troops;
         let troopNames = [];
@@ -100,10 +101,13 @@ function calculateTroopsTime(info) {
     let troopLevels = getTroopLevels(info);
     let troopTimeTxt = $("#txtTroopTime");
 
+    troopTimeTxt.val("0");
+
+
     let troopTimePromise = new Promise((resolve) => {
 
         for(let i = 0; i < troopNames.length; i++) {
-            troop.getSpecifiedTroopTime([troopNames[i], info.townHallLevel + 2, troopLevels[i]]);
+            troop.getTime([troopNames[i], info.townHallLevel + 2, troopLevels[i]]);
         }
 
         setTimeout(function () {
@@ -121,7 +125,7 @@ function getSpecifiedSpellTimeCallback(transaction, resultSet) {
     let txtSpellTime = $("#txtSpellTime");
     if(resultSet.rows.length > 0)
     {
-        txtSpellTime.val(Number(txtSpellTime.val()) + getSpellOrTroopTimeRemaining(resultSet));
+        txtSpellTime.val(Number(txtSpellTime.val()) + resultSet.rows[0].total);
     }
 }
 
@@ -129,7 +133,7 @@ function getSpecifiedTroopTimeCallback(transaction, resultSet) {
     let txtTroopTime = $("#txtTroopTime");
     if(resultSet.rows.length > 0)
     {
-        txtTroopTime.val(Number(txtTroopTime.val()) + getSpellOrTroopTimeRemaining(resultSet));
+        txtTroopTime.val(Number(txtTroopTime.val()) + resultSet.rows[0].total);
     }
 }
 
@@ -492,30 +496,6 @@ function populateTroop() {
             troop.insert(troopChart[i]);
         }
     }
-}
-
-function getHeroTimeRemaining(rs) {
-    let leveln = rs.rows.length;
-    let totalTime = 0;
-    for (let i = 0; i < leveln; i++) {
-
-        let r = rs.rows.item(i);
-        totalTime = totalTime + r.timeRequired;
-    }
-    return hoursToDaysHours(totalTime);
-}
-
-function getSpellOrTroopTimeRemaining(rs) {
-    let rows = rs.rows.length;
-    let totalTime = 0;
-
-    for (let i = 0; i < rows; i++)
-    {
-        let r = rs.rows.item(i);
-        totalTime = totalTime + r.timeRequired;
-    }
-
-    return totalTime;
 }
 
 function hoursToDaysHours(time) {

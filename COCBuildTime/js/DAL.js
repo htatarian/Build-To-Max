@@ -1,28 +1,26 @@
 let king = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            let sql = "INSERT INTO king(townHallLevel, timeRequired) VALUES(?,?);";
-            tx.executeSql(sql, options, callback, errorHandler);
+            tx.executeSql("INSERT INTO king VALUES(NULL,?,?);",
+                options, callback, errorHandler);
         }
-        function successTransaction() {
+
+        db.transaction(txFunction, errorHandler, function () {
             console.info("Success: King Level Inserted");
-        }
-        db.transaction(txFunction, errorHandler, successTransaction);
+        });
     },
     getTimeLeft: function (options) {
         function txFunction(tx) {
-            tx.executeSql("SELECT timeRequired FROM king WHERE id > ? AND townHallLevel <= ?;",
+            tx.executeSql("SELECT SUM(timeRequired) AS total FROM king WHERE id > ? AND townHallLevel <= ?;",
                 options, successExecution, errorHandler);
         }
         function successExecution(tx, rs) {
+            let txtKingTime = $("#txtKingTime");
             if(rs.rows.length > 0)
             {
-                $("#txtKingTime").val(getHeroTimeRemaining(rs));
+                txtKingTime.val(rs.rows[0].total);
             }
-            else
-            {
-                $("#txtKingTime").val("0 Days");
-            }
+            txtKingTime.val(hoursToDaysHours(txtKingTime.val()));
         }
         function successTransaction(){
             console.info("Success: King Max Time Fetched");
@@ -34,28 +32,26 @@ let king = {
 let queen = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            let sql = "INSERT INTO queen(townHallLevel, timeRequired) VALUES(?,?);";
-            tx.executeSql(sql, options, callback, errorHandler);
+            tx.executeSql("INSERT INTO queen VALUES(NULL,?,?);",
+                options, callback, errorHandler);
         }
-        function successTransaction() {
+
+        db.transaction(txFunction, errorHandler, function () {
             console.info("Success: Queen Level Inserted");
-        }
-        db.transaction(txFunction, errorHandler, successTransaction);
+        });
     },
     getTimeLeft: function (options) {
         function txFunction(tx) {
-            tx.executeSql("SELECT timeRequired FROM queen WHERE id > ? AND townHallLevel <= ?;",
+            tx.executeSql("SELECT SUM(timeRequired) AS total FROM queen WHERE id > ? AND townHallLevel <= ?;",
                 options, successExecution, errorHandler);
         }
         function successExecution(tx, rs) {
+            let txtQueenTime = $("#txtQueenTime");
             if(rs.rows.length > 0)
             {
-                $("#txtQueenTime").val(getHeroTimeRemaining(rs));
+                txtQueenTime.val(rs.rows[0].total);
             }
-            else
-            {
-                $("#txtQueenTime").val("0 Days");
-            }
+            txtQueenTime.val(hoursToDaysHours(txtQueenTime.val()));
         }
         function successTransaction(){
             console.info("Success: Queen Max Time Fetched");
@@ -67,22 +63,20 @@ let queen = {
 let spell = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            let sql = "INSERT INTO spell(name, spellLevel, timeRequired, spellFactoryLevel) VALUES(?,?,?,?);";
-            tx.executeSql(sql, options, callback, errorHandler);
+            tx.executeSql("INSERT INTO spell VALUES(NULL,?,?,?,?);",
+                options, callback, errorHandler);
         }
         function successTransaction() {
             console.info("Success: Spell Level Inserted");
         }
         db.transaction(txFunction, errorHandler, successTransaction);
     },
-    getSpecifiedSpellTime: function (options) {
+    getTime: function (options) {
 
         function txFunction(tx) {
-
-            let sql = "SELECT * FROM spell " +
-                "WHERE name = ? AND spellFactoryLevel <= ? AND spellLevel > ?;";
-
-            tx.executeSql(sql, options, getSpecifiedSpellTimeCallback, errorHandler);
+            tx.executeSql("SELECT SUM(timeRequired) AS total FROM spell " +
+                "WHERE name = ? AND spellFactoryLevel <= ? AND spellLevel > ?;",
+                options, getSpecifiedSpellTimeCallback, errorHandler);
         }
 
         db.transaction(txFunction, errorHandler, function () {
@@ -94,22 +88,19 @@ let spell = {
 let troop = {
     insert: function (options, callback) {
         function txFunction(tx) {
-            let sql = "INSERT INTO troop(name, troopLevel, timeRequired, barracksLevel) VALUES(?,?,?,?);";
-            tx.executeSql(sql, options, callback, errorHandler);
+            tx.executeSql("INSERT INTO troop VALUES(NULL,?,?,?,?);"
+                , options, callback, errorHandler);
         }
-        function successTransaction() {
+        db.transaction(txFunction, errorHandler, function () {
             console.info("Success: Troop Level Inserted");
-        }
-        db.transaction(txFunction, errorHandler, successTransaction);
+        });
     },
-    getSpecifiedTroopTime: function (options) {
+    getTime: function (options) {
 
         function txFunction(tx) {
-
-            let sql = "SELECT * FROM troop " +
-                "WHERE name = ? AND barracksLevel <= ? AND troopLevel > ?;";
-
-            tx.executeSql(sql, options, getSpecifiedTroopTimeCallback, errorHandler);
+            tx.executeSql("SELECT SUM(timeRequired) AS total FROM troop " +
+                "WHERE name = ? AND barracksLevel <= ? AND troopLevel > ?;",
+                options, getSpecifiedTroopTimeCallback, errorHandler);
         }
 
         db.transaction(txFunction, errorHandler, function () {

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eaa20aed-eb05-483b-b104-84c088fa8d29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/COCBuildTime/COCAPI" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/js/COCAPI.PHP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/COCBuildTime/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/COCBuildTime/js/facade.js" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/js/facade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COCBuildTime/js/DAL.js" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/js/DAL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COCBuildTime/js/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/js/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COCBuildTime/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/COCBuildTime/js/util.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,17 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/COCBuildTime/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/COCBuildTime/js/COCAPI.PHP">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="1368">
+              <caret line="72" selection-start-line="72" selection-end-line="94" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -48,8 +40,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/COCBuildTime/js/facade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="285">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/COCBuildTime/js/database.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/COCBuildTime/js/DAL.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="97" column="11" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -57,8 +67,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/COCBuildTime/js/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="93">
+              <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+              <folding>
+                <element signature="n#!!block;n#calculateKingTime#0" />
+                <element signature="n#!!block;n#calculateQueenTime#0" />
+                <element signature="n#!!block;n#getHeroLevel#0" />
+                <element signature="n#!!block;n#getSpellNames#0;n#!!block;n#calculateSpellTime#0" />
+                <element signature="n#!!block;n#getSpellLevels#0;n#!!block;n#calculateSpellTime#0" />
+                <element signature="n#!!block;n#calculateTroopsTime#0" />
+                <element signature="n#!!block;n#getSpecifiedSpellTimeCallback#0" />
+                <element signature="n#!!block;n#getSpecifiedTroopTimeCallback#0" />
+                <element signature="n#!!block;n#populateKing#0" />
+                <element signature="n#!!block;n#populateQueen#0" />
+                <element signature="n#!!block;n#populateSpell#0" />
+                <element signature="n#!!block;n#populateTroop#0" />
+                <element signature="n#!!block;n#hoursToDaysHours#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +93,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>showResults</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,21 +102,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/COCBuildTime/js/database.js" />
-        <option value="$PROJECT_DIR$/COCBuildTime/js/DAL.js" />
         <option value="$PROJECT_DIR$/COCBuildTime/js/global.js" />
-        <option value="$PROJECT_DIR$/COCBuildTime/js/util.js" />
         <option value="$PROJECT_DIR$/COCBuildTime/APICalls" />
         <option value="$PROJECT_DIR$/COCBuildTime/COCAPI" />
-        <option value="$PROJECT_DIR$/COCBuildTime/index.html" />
         <option value="$PROJECT_DIR$/COCBuildTime/js/facade.js" />
         <option value="$PROJECT_DIR$/COCBuildTime/js/COCAPI.PHP" />
+        <option value="$PROJECT_DIR$/COCBuildTime/index.html" />
+        <option value="$PROJECT_DIR$/COCBuildTime/js/database.js" />
+        <option value="$PROJECT_DIR$/COCBuildTime/js/DAL.js" />
+        <option value="$PROJECT_DIR$/COCBuildTime/js/util.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="271" />
-    <option name="y" value="-29" />
+    <option name="x" value="270" />
+    <option name="y" value="-30" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -99,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,16 +138,21 @@
               <item name="COC-Build-Time" type="462c0819:PsiDirectoryNode" />
               <item name="COCBuildTime" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="COC-Build-Time" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COC-Build-Time" type="462c0819:PsiDirectoryNode" />
+              <item name="COCBuildTime" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -171,22 +203,24 @@
       <workItem from="1549985557437" duration="116000" />
       <workItem from="1549985697745" duration="13386000" />
       <workItem from="1550000181412" duration="642000" />
+      <workItem from="1550787725198" duration="4402000" />
+      <workItem from="1550801431923" duration="2147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14144000" />
+    <option name="totallyTimeSpent" value="20693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34897554" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1698612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30538923" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30538923" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -223,24 +257,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/database.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/DAL.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.editorconfig" />
+    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/COCAPI.PHP" />
     <entry file="file://$PROJECT_DIR$/COCBuildTime/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="1368">
+          <caret line="72" selection-start-line="72" selection-end-line="94" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -253,15 +275,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/COCBuildTime/js/facade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="285">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/COCAPI.PHP">
+    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/database.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="304">
+          <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="131" column="63" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!block;n#calculateKingTime#0" />
+            <element signature="n#!!block;n#calculateQueenTime#0" />
+            <element signature="n#!!block;n#getHeroLevel#0" />
+            <element signature="n#!!block;n#getSpellNames#0;n#!!block;n#calculateSpellTime#0" />
+            <element signature="n#!!block;n#getSpellLevels#0;n#!!block;n#calculateSpellTime#0" />
+            <element signature="n#!!block;n#calculateTroopsTime#0" />
+            <element signature="n#!!block;n#getSpecifiedSpellTimeCallback#0" />
+            <element signature="n#!!block;n#getSpecifiedTroopTimeCallback#0" />
+            <element signature="n#!!block;n#populateKing#0" />
+            <element signature="n#!!block;n#populateQueen#0" />
+            <element signature="n#!!block;n#populateSpell#0" />
+            <element signature="n#!!block;n#populateTroop#0" />
+            <element signature="n#!!block;n#hoursToDaysHours#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COCBuildTime/js/DAL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="97" column="11" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="11" />
         </state>
       </provider>
     </entry>
